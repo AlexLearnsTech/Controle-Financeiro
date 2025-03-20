@@ -1,0 +1,282 @@
+:root {
+    --primary: #3a568c;
+    --primary-light: #4a73b8;
+    --accent: #a1b6dd;
+    --light: #f5f7fa;
+    --dark: #252525;
+    --success: #4caf50;
+    --danger: #f44336;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.card.entrada p {
+    color: var(--success);
+}
+
+.card.saida p {
+    color: var(--danger);
+}
+
+.card.saldo p {
+    color: var(--primary);
+}
+
+.form-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--primary-light);
+}
+
+.btn-success {
+    background-color: var(--success);
+}
+
+.btn-success:hover {
+    background-color: #5cb85c;
+}
+
+.btn-danger {
+    background-color: var(--danger);
+}
+
+.btn-danger:hover {
+    background-color: #e53935;
+}
+
+.transacoes {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab {
+    padding: 12px 20px;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: var(--primary);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--accent);
+    color: var(--primary);
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: rgba(161, 182, 221, 0.1);
+}
+
+.action-btn {
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+}
+
+.entrada-row {
+    border-left: 4px solid var(--success);
+}
+
+.saida-row {
+    border-left: 4px solid var(--danger);
+}
+
+.valor-positivo {
+    color: var(--success);
+    font-weight: bold;
+}
+
+.valor-negativo {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+.data-cell {
+    white-space: nowrap;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-bar input {
+    flex: 1;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}

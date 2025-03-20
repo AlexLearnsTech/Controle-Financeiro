@@ -1,0 +1,54 @@
+/* Estilos responsivos para telas menores */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    th, td {
+        padding: 8px;
+    }
+    
+    .responsive-table {
+        overflow-x: auto;
+    }
+    
+    .tab {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .card p {
+        font-size: 24px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
+
+/* Ajustes para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .form-section, .transacoes {
+        padding: 15px;
+    }
+    
+    .tab-content {
+        padding: 15px 10px;
+    }
+    
+    button {
+        padding: 10px 15px;
+    }
+    
+    .search-bar {
+        flex-direction: column;
+    }
+}

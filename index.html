@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro - Igreja</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sistema de Controle Financeiro</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="card entrada">
+                <h3>Total de Entradas</h3>
+                <p id="total-entradas">R$ 0,00</p>
+            </div>
+            <div class="card saida">
+                <h3>Total de Saídas</h3>
+                <p id="total-saidas">R$ 0,00</p>
+            </div>
+            <div class="card saldo">
+                <h3>Saldo Atual</h3>
+                <p id="saldo-atual">R$ 0,00</p>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>Registrar Nova Transação</h2>
+            <div class="form-grid">
+                <div>
+                    <div class="form-group">
+                        <label for="tipo">Tipo de Transação</label>
+                        <select id="tipo" required>
+                            <option value="entrada">Entrada</option>
+                            <option value="saida">Saída</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <select id="categoria">
+                            <option value="Dízimo">Dízimo</option>
+                            <option value="Oferta">Oferta</option>
+                            <option value="Campanha">Campanha</option>
+                            <option value="Aluguel">Aluguel</option>
+                            <option value="Água/Luz">Água/Luz</option>
+                            <option value="Manutenção">Manutenção</option>
+                            <option value="Material">Material</option>
+                            <option value="Salários">Salários</option>
+                            <option value="Ação Social">Ação Social</option>
+                            <option value="Eventos">Eventos</option>
+                            <option value="Missões">Missões</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="valor">Valor (R$)</label>
+                        <input type="number" id="valor" step="0.01" min="0.01" required placeholder="0,00">
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <label for="data">Data</label>
+                        <input type="date" id="data" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" placeholder="Detalhes sobre a transação"></textarea>
+                    </div>
+                </div>
+            </div>
+            <button id="adicionar-transacao" class="btn-success">Registrar Transação</button>
+        </div>
+
+        <div class="transacoes">
+            <div class="tabs">
+                <div class="tab active" data-tab="todas">Todas as Transações</div>
+                <div class="tab" data-tab="entradas">Entradas</div>
+                <div class="tab" data-tab="saidas">Saídas</div>
+            </div>
+
+            <div class="tab-content active" id="todas">
+                <div class="search-bar">
+                    <input type="text" id="pesquisa" placeholder="Pesquisar transações...">
+                    <button id="btn-pesquisar">Buscar</button>
+                </div>
+                <div class="responsive-table">
+                    <table id="tabela-todas">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Tipo</th>
+                                <th>Categoria</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transacoes-todas">
+                            <!-- As transações serão inseridas aqui via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="empty-todas" class="empty-message">Nenhuma transação registrada</div>
+            </div>
+
+            <div class="tab-content" id="entradas">
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Categoria</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transacoes-entradas">
+                            <!-- As entradas serão inseridas aqui via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="empty-entradas" class="empty-message">Nenhuma entrada registrada</div>
+            </div>
+
+            <div class="tab-content" id="saidas">
+                <div class="responsive-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Categoria</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transacoes-saidas">
+                            <!-- As saídas serão inseridas aqui via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+                <div id="empty-saidas" class="empty-message">Nenhuma saída registrada</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="back-to-top">↑</div>
+
+    <script src="utils.js"></script>
+    <script src="transacoes.js"></script>
+    <script src="ui.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
